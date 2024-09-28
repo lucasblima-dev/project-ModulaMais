@@ -1,0 +1,46 @@
+# Node.js
+node_modules/
+npm-debug.log
+.env
+
+# Logs
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Docker
+docker-compose.yml
+.dockerignore
+Dockerfile
+*.dockerfile
+docker-compose.override.yml
+
+# Sequelize files
+migrations/
+seeders/
+
+# MySQL
+*.sql
+*.db
+*.sql-journal
+
+# React (Vite.js)
+dist/
+.vite
+.vscode
+*.cache
+.DS_Store
+.eslintcache
+
+# Coverage directories
+coverage/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*.swn
+*~

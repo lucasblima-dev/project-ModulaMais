@@ -1,0 +1,47 @@
+{
+  "name": "backend-modulamais",
+  "version": "1.0.0",
+  "description": "API Node.js com Express, Sequelize e MySQL",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "lint:check": "npx eslint --ext .js ./",
+    "lint:fix": "npx eslint --fix --ext .js ./",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon -L app.js"
+  },
+  "author": "Lucas Lima",
+  "license": "MIT",
+  "keywords": [
+    "nodejs",
+    "express",
+    "restful",
+    "api",
+    "sequelize",
+    "yup",
+    "dotenv",
+    "editorconfig",
+    "mysql"
+  ],
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.1.2",
+    "sequelize": "^6.29.0",
+    "yup": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.37.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.8"
+  }
+}
