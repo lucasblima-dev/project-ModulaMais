@@ -47,5 +47,5 @@ app.use((err, req, res, next) => {
 const port = process.env.NODE_LOCAL_PORT || 3001;
 app.listen(port, () => {
   console.log(`API ouvindo na porta: ${port}`);
-  console.log(`--> http://${process.env.NODE_APP_HOST}:${port}}`);
+  console.log(`--> http://${process.env.NODE_APP_HOST}:${port}`);
 });

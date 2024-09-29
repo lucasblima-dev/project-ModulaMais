@@ -3,6 +3,8 @@ import { Sequelize } from 'sequelize';
 
 dotenv.config();
 
+import Capivara from '../models/Capivara.js';
+
 const sequelize = new Sequelize(
   process.env.MYSQL_DATABASE,
   process.env.MYSQL_USERNAME,
@@ -21,7 +23,10 @@ const sequelize = new Sequelize(
 
 const database = async function connect() {
   try {
+    Capivara.init(sequelize);
+
     await sequelize.authenticate();
+    await sequelize.sync({ force: false });
 
     if (process.env.APP_DEBUG) {
       console.log(
