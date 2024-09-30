@@ -11,7 +11,7 @@ import {
 } from '../controllers/capivaraController.js';
 
 router.get('/capivaras', getAllCapivaras);
-router.get('/capivaras/habitat/:habitat', getCapivaraByHabitat);
+router.get('/capivaras/habitat/', getCapivaraByHabitat);
 
 router.post('/capivara', createCapivara);
 

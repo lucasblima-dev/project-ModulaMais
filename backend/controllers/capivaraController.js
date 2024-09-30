@@ -3,18 +3,21 @@ import Capivara from '../models/Capivara.js';
 export const getAllCapivaras = async (req, res) => {
   try {
     const capivara = await Capivara.findAll();
-    res.json(capivara);
+    res.status(200).json(capivara);
   } catch (err) {
     res.status(500).json({ err: 'Erro ao buscar as Capivaras.' });
   }
 };
 
 export const getCapivaraByHabitat = async (req, res) => {
-  const { habitat } = req.params;
+  const { habitat } = req.query;
 
   try {
     const capivaras = await Capivara.findAll({ where: { habitat } });
-    res.json(capivaras)
+
+    if (capivaras.length === 0) return res.status(404).json({ error: 'Nenhuma Capivara encontrada no habitat fornecido' });
+
+    res.status(200).json(capivaras);
   } catch (error) {
     res.status(500).json({ error: 'Erro ao buscar as Capivaras por habitat.' });
   }
@@ -38,6 +41,8 @@ export const updateCapivara = async (req, res) => {
     if (!capivara) return res.status(404).json({ error: 'Capivara não encontrada' });
 
     await capivara.update(req.body);
+
+    return res.status(200).json(capivara);
   } catch (error) {
     res.status(400).json({ error: 'Erro ao atualizar a Capivara.' });
   }
