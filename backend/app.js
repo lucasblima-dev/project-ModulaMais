@@ -6,7 +6,7 @@ import cors from 'cors';
 dotenv.config();
 
 import database from './database/index.js';
-//import routes from './routes/index.js'
+import routes from './routes/Routes.js';
 
 (async () => {
   await database();
@@ -26,6 +26,8 @@ app.use(urlencoded({ extended: true }));
 app.get('/', (req, res) => {
   res.json({ message: 'Iniciando a API do projeto' });
 });
+
+app.use('/', routes);
 
 app.use((err, req, res, next) => {
   if (process.env.APP.DEBUG) {
