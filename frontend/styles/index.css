@@ -38,7 +38,8 @@ button:active {
   padding: 2px;
 }
 
-.overlay {
+.overlay,
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -52,7 +53,8 @@ button:active {
   z-index: 999;
 }
 
-.form-container {
+.form-container,
+.modal {
   background-color: white;
   padding: 20px;
   border-radius: 10px;

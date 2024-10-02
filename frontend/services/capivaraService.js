@@ -16,9 +16,9 @@ export const createCapivara = async (newCapivara) => {
 }
 
 export const updateCapivara = async (id, newInfo) => {
-  return axios.put(`${URL}:${id}`, newInfo);
+  return axios.put(`${URL}${id}`, newInfo);
 }
 
 export const deleteCapivara = async (id) => {
-  return axios.delete(`${URL}:${id}`);
+  return axios.delete(`${URL}${id}`);
 }

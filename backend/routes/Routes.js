@@ -17,6 +17,6 @@ router.post('/capivara', createCapivara);
 
 router.put('/capivara/:id', updateCapivara);
 
-router.delete('capivara/:id', deleteCapivara);
+router.delete('/capivara/:id', deleteCapivara);
 
 export default router;
