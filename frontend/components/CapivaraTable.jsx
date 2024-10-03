@@ -11,8 +11,8 @@ const CapivaraTable = ({ capivaras, setCapivaraEditada, getCapivaras }) => {
   };
 
   return (
-    <table className="table table-responsive bg-white exemplo">
-      <thead className="bg-transparent text-center text-shadow">
+    <table className="table table-responsive table-striped exemplo">
+      <thead className="text-center thead-dark">
         <tr>
           <th>Nome</th>
           <th>Idade</th>
@@ -28,11 +28,11 @@ const CapivaraTable = ({ capivaras, setCapivaraEditada, getCapivaras }) => {
       <tbody className="text-center bg-light">
         {capivaras.map(capivara => (
           <tr key={capivara.id}>
-            <td>{capivara.nome}</td>
+            <td className="font-weight-bold">{capivara.nome}</td>
             <td>{capivara.idade}</td>
             <td>{capivara.peso}kg</td>
             <td>{capivara.status_saude}</td>
-            <td>{capivara.habitat}</td>
+            <td className="font-weight-bold">{capivara.habitat}</td>
             <td>{capivara.comportamento}</td>
             <td>{capivara.dieta}</td>
             <td>{capivara.observacoes}</td>

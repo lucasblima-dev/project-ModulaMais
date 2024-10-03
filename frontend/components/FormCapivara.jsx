@@ -1,7 +1,7 @@
+import { updateCapivara } from '../services/capivaraService';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
-const FormCapivara = ({ capivara, setCapivaraEditada, getCapivaras }) => {
+const FormCapivara = ({ capivara, setCapivaraEditada, getCapivaras, carregarCapivaras }) => {
   const [nome, setNome] = useState(capivara?.nome || '');
   const [idade, setIdade] = useState(capivara?.idade || '');
   const [peso, setPeso] = useState(capivara?.peso || '');
@@ -16,7 +16,7 @@ const FormCapivara = ({ capivara, setCapivaraEditada, getCapivaras }) => {
       setNome(capivara.nome || '');
       setIdade(capivara.idade || '');
       setPeso(capivara.peso || '');
-      setStatus(capivara.status || '');
+      setStatus(capivara.status_saude || '');
       setHabitat(capivara.habitat || '');
       setComportamento(capivara.comportamento || '');
       setDieta(capivara.dieta || '');
@@ -38,12 +38,9 @@ const FormCapivara = ({ capivara, setCapivaraEditada, getCapivaras }) => {
       observacoes,
     };
 
-    if (capivara) {
-      await axios.put(`http://localhost:3001/capivara/${capivara.id}`, novaCapivara);
-    } else {
-      await axios.post('http://localhost:3001/capivara', novaCapivara);
-    }
+    await updateCapivara(capivara.id, novaCapivara);
 
+    carregarCapivaras();
     getCapivaras();
     setCapivaraEditada(null);
   };

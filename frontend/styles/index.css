@@ -29,14 +29,14 @@ button:active {
 .material-icons {
   padding: 4px;
   font-size: 30px;
-  color: #58baa9;
+  /* color: #58baa9; */
 }
 
-.material-icons:hover {
+/* .material-icons:hover {
   border: 2px solid #c7baba;
   border-radius: 50px;
   padding: 2px;
-}
+} */
 
 .overlay,
 .modal-overlay {
@@ -80,11 +80,26 @@ textarea {
 }
 
 .button-ok {
-  background-color: #58baa9;
+  background-color: #0e806d;
   color: #fff
 }
 
 .button-dell {
   background-color: #f44336;
   color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 40px 0 20px 0;
+}
+
+.header>span {
+  font-size: 20px;
+}
+
+.input-search {
+  width: 100%;
 }
