@@ -54,15 +54,16 @@ cd project-modulamais
 ```
 
 ### Configurando o Banco de Dados
-1. Inicie um container no Docker com a imagem do MySQL:
+1. Inicialize o Docker na máquina:
+```bash
+sudo systemctl start docker
+```
+
+2. Inicie um container no Docker com a imagem do MySQL:
 ```bash
 docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=projectmodulamais -p 3306:3306 -d mysql:latest
 ```
 
-2. Inicialize o Docker na máquina:
-```bash
-sudo systemctl start docker
-```
 3. Inicialize o container do servidor MySQL:
 ```bash
 docker start mysql-container
