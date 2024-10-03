@@ -49,6 +49,10 @@ git clone https://github.com/lucasblima-dev/project-modulamais.git
 cd project-modulamais
 ```
 
+```bash
+cd project-modulamais
+```
+
 ### Configurando o Banco de Dados
 1. Inicie um container no Docker com a imagem do MySQL:
 ```bash
